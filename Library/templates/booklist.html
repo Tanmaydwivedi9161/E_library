@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+<div class="container mt-0">
+    <h2 class="text-center fw-bold">Book Lists</h2>
+    <div class="row">
+        {% for book in books %}
+            <div class="col-md-4 mb-4 mt-2">
+                <div class="card" style="width: 18rem;">
+                    {% if book.cover_image %}
+                        <img src="{{ book.cover_image.url }}" class="card-img-top" alt="{{ book.title }}">
+                    {% else %}
+                        <img src="{% static 'img/default_book_cover.jpg' %}" class="card-img-top" alt="Default cover">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Author - {{ book.author }}</h6>
+                        <p class="card-text">Description - {{ book.description }}</p>
+                        {% if book.download_link %}
+                            <a href="{{ book.download_link }}" class="btn btn-primary" download>Download</a>
+                        {% else %}
+                            <span class="text-muted">Not Available</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'home' %}" class="btn btn-danger">Logout</a>
+</div>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+{% endblock %}

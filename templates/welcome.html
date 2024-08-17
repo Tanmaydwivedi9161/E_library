@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Tanmay's E-Library</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        body {
+            background-color: #1e1e1e; /* Dark background color */
+            color: #ffffff; /* White text color */
+            text-align: center;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .welcome-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color:yellow;
+        }
+        .description {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            text-decoration: none; /* Remove underline */
+            color: #ffffff; /* White text color */
+            display: inline-block; /* Ensure proper padding and alignment */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="welcome-text">Welcome to Tanmay's E-Library</h1>
+            <p class="description">
+                Discover a wide range of books and notes available for free download. Our library offers a vast collection of resources to help you with your studies and projects. Explore our collection and start downloading today!
+            </p>
+            <p class="description">
+                Here you will find Maths , Reasoning , English , Computer and other notes. Keep checking them everyday, all the notes will be added gradually.
+            </p>
+            <h2></h2>
+            <a href="{% url 'home' %}" class="btn btn-primary">Explore Books</a>
+        </div>
+    </div>
+    <footer>
+        <p class="mb-0">© 2024 Tanmay's E-Library. All rights reserved.</p>
+    </footer>
+</body>
+</html>
